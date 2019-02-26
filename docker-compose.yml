@@ -1,0 +1,14 @@
+---
+version '3'
+services:
+  prod_app:
+    build:
+      context: .
+  ports:
+    - "8080:8080"
+  
+  registry:
+    images: "registry:2"
+    container_name: registry
+  ports:
+    - "5000:5000"

@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('build docker container prod and registry') {
             steps {
-		docker-compose build --no-cache
+		sh 'docker-compose build --no-cache'
             }         
         }
     }

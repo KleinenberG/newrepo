@@ -2,11 +2,11 @@
 version: '2'
 services:
   prod_app:
-    enveronment:
-      - GIT_COMMIT=$(git log -n 1)
+    environment:
+      - GIT_COMMIT
     build:
       context: .
-    container_name: prod_app
+    container_name: "prod_app:${GIT_COMMIT}"
     ports:
       - "8080:8080"
   registry:

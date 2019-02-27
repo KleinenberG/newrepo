@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage ('build docker container prod and registry') {
             steps {
-                sh 'docker-compose up'
+		sh 'hostname'
+                sh 'ls -la'
+            	sh 'docker-compose up'
             }         
         }
     }

@@ -2,9 +2,9 @@ pipeline {
     agent { label'agent1' }
     
     stages {
-        stage ('git') {
+        stage ('build docker container prod and registry') {
             steps {
-                sh 'hostname'
+                sh 'docker-compose up'
             }         
         }
     }

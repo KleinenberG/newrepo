@@ -2,6 +2,8 @@
 version: '2'
 services:
   prod_app:
+    enveronment:
+      - GIT_COMMIT=$(git log -n 1)
     build:
       context: .
     container_name: prod_app

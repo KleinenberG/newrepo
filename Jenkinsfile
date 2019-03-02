@@ -7,8 +7,10 @@ pipeline {
   stages {
     stage ('build docker container prod and registry') {
       steps {
-        DockerImage = docker.build(registry + "$BUILD_NUMBER")
-	sh 'docker images'
+        script{
+          DockerImage = docker.build(registry + "$BUILD_NUMBER")
+	}
+        sh 'docker images'
             }         
         }
     }

@@ -9,13 +9,17 @@ pipeline {
       steps {
         script{
           DockerImage = docker.build "$registry:$BUILD_ID"
-	  DockerImage.inside {
-            sh 'hostname'
+        }
+      }
+    }
+    stage ('push docker image to registry') {
+      steps{
+        script {
+          docker.withRegistry( '', registryCredantial ) {
+            DockerImage.push()  
           }
         }
-        sh 'docker images'
-        sh 'env'
-            }         
-        }
+      }
     }
+  }
 }	 	

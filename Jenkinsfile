@@ -10,7 +10,6 @@ pipeline {
         script{
           DockerImage = docker.build "$registry:$BUILD_ID"
 	  DockerImage.inside {
-            hostname
             sh 'hostname'
           }
         }

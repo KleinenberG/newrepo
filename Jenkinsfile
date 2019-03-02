@@ -8,7 +8,7 @@ pipeline {
     stage ('build docker container prod') {
       steps {
         script{
-          DockerImage = docker.build(registry:"${BUILD_NUMBER}")
+          DockerImage = docker.build(registry)
 	}
         sh 'docker images'
         sh 'env'

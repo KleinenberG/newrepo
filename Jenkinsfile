@@ -1,7 +1,7 @@
 pipeline {
   agent { label'agent1' }
   environment {
-    registry = "Kleinenberg/boxefuse_prod"
+    registry = "kleinenberg/boxefuse_prod"
     registryCredantial = 'dickerHUB'
   } 	    
   stages {

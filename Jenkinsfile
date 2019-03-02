@@ -5,10 +5,10 @@ pipeline {
     registryCredantial = 'dickerHUB'
   } 	    
   stages {
-    stage ('build docker container prod and registry') {
+    stage ('build docker container prod') {
       steps {
         script{
-          DockerImage = docker.build(registry:"$BUILD_NUMBER")
+          DockerImage = docker.build(registry:"${BUILD_NUMBER}")
 	}
         sh 'docker images'
         sh 'env'

@@ -11,6 +11,7 @@ pipeline {
           DockerImage = docker.build(registry + "$BUILD_NUMBER")
 	}
         sh 'docker images'
+        sh 'env'
             }         
         }
     }

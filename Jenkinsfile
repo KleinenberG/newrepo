@@ -1,7 +1,7 @@
 pipeline {
   agent { label'agent1' }
   environment {
-    registry = "kleinenberg/boxefuse_prod"
+    registry = "kleinenbrg/boxefuse_prod"
     registryCredantial = '5a61a739-6ebd-4984-9524-7dee5f195b3f'
     dockerImage = ''
   } 	    
